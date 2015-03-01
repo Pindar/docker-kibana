@@ -5,8 +5,8 @@ MAINTAINER Simon Dittlmann
 RUN apt-get update -y -qq && \
 	apt-get install -y -qq curl tar
 
-RUN curl -L -O https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-beta3.tar.gz && \
-	tar xfv kibana-4.0.0-beta3.tar.gz
+RUN curl -L -O https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-linux-x64.tar.gz && \
+	tar xfv kibana-4.0.0-linux-x64.tar.gz -C /
 
 ENV JAVA_VERSION 8u25
 ENV JAVA_FOLDER_NAME jdk1.8.0_25
@@ -31,4 +31,4 @@ ADD scripts/start.sh /start.sh
 RUN chmod +x /start.sh
 CMD ["/start.sh"]
 
-EXPOSE 
+EXPOSE 80
