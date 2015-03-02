@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
 
-sed -i "s/elasticsearch: \"http:\/\/localhost:9200\"/elasticsearch: \"$(echo $ELASTICSEARCH_ENDPOINT | sed -e 's/[]\/$*.^|[]/\\&/g')\"/" /kibana-4.0.0-linux-x64/config/kibana.yml
+sed -i "s/elasticsearch_url: \"http:\/\/localhost:9200\"/elasticsearch_url: \"$(echo $ELASTICSEARCH_ENDPOINT | sed -e 's/[]\/$*.^|[]/\\&/g')\"/" /kibana-4.0.0-linux-x64/config/kibana.yml
 
 if ! [[ $USER == "" && $PASS == "" ]]; then
-	echo "elasticsearch_username: $USER" >> /kibana-4.0.0-linux-x64/config/kibana.yml
-	echo "elasticsearch_password: $PASS" >> /kibana-4.0.0-linux-x64/config/kibana.yml
+	echo "kibana_elasticsearch_username: $USER" >> /kibana-4.0.0-linux-x64/config/kibana.yml
+	echo "kibana_elasticsearch_password: $PASS" >> /kibana-4.0.0-linux-x64/config/kibana.yml
 fi
 
 
