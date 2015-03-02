@@ -31,4 +31,4 @@ ADD scripts/start.sh /start.sh
 RUN chmod +x /start.sh
 CMD ["/start.sh"]
 
-EXPOSE 80
+EXPOSE 5601
